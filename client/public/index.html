@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation and Image Processing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to web of animation</h1>
+    <canvas id="canvas"></canvas>
+    <div id="root"></div>
+
+    <!-- Example: Include a library for animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <!-- Example: Include a library or script for image processing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>-->
+    <!-- Replace the above script with your actual library or service -->
+
+    <script>
+        // Example: Animation function using GSAP (GreenSock Animation Platform)
+        function animateElement() {
+            gsap.to("#animatedElement", { duration: 2, x: 100, rotation: 360, ease: "bounce.out" });
+        }
+
+        // Example: Image processing function using Fabric.js (HTML5 canvas library)
+        function processImage() {
+            var canvas = new fabric.Canvas('canvas');
+            fabric.Image.fromURL('https://th.bing.com/th/id/R.c4e19d38124ef282ffa0e4dba95b645a?rik=94Jr3AQPfdVQFA&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2014%2f11%2fYosemite.jpg&ehk=VVdVl4P%2bNY5iWACn5MWxqsU6DY6It%2f9AvvZ58lSBY3Q%3d&risl=&pid=ImgRaw&r=0', function(img) {
+                canvas.add(img).renderAll();
+            });
+        }
+
+        // Example: Call the animation and image processing functions
+        animateElement();
+        processImage();
+    </script>
+
+    <!-- Example: Include your application logic script -->
+    <script src="src/index.js"></script>
+</body>
+</html>
